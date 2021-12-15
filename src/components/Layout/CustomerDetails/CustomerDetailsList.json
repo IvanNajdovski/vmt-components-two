@@ -1,0 +1,33 @@
+{
+  "main": [
+    { "title": "Product", "field": "productShortName", "values": {}, "noData": "Not set" },
+    { "title": "Currency", "field": "currencyCode", "values": {}, "noData": "Not set" },
+    { "title": "Offer type", "field": "offerType", "values": {}, "noData": "Not set" },
+    { "title": "OBR", "field": "mmtrCustomerInd", "values": { "Y": "Yes" }, "noData": "No" },
+    { "title": "Customer type", "field": "noAutoRate", "values": { "Y": "M", "N": "A" }, "noData": "Not set" },
+    { "title": "Frequency", "field": "targetVolumeType", "values": { "WEEKLY": "W", "MONTHLY": "M" }, "noData": "Not set" },
+    { "title": "Floor plus", "field": "floorPlus", "values": {}, "noData": "N/A" }
+  ],
+  "extended": [
+    [
+      {
+        "title": "Account manager",
+        "field": "accountManager",
+        "values": {},
+        "noData": "Not set"
+      },
+      { "title": "Six Digit Rate", "field": "sixDigitRate", "values": { "Y": "Y", "N": "N" }, "noData": "N/A" }
+    ],
+    [
+      { "title": "Linked customers", "field": "linkedCustomers", "values": {}, "keyField": "customerName", "noData": "No linked customers" },
+      { "title": "Preferred route categories", "field": "preferredRouteCategories", "values": {}, "keyField": "id", "noData": "No preferred routes" }
+    ],
+    [
+      { "title": "Voice GT Migrate Flag", "field": "voiceGTMigrateFlag", "values": { "Y": "Y" }, "noData": "N" },
+      { "title": "Voice GT Effective Date ", "type": "date", "field": "voiceGTEffectiveDate", "values": {}, "noData": "N/A" }
+    ],
+    [
+      { "title": "Issue Origin Rates", "field": "issueOriginRates", "values": {}, "noData": "No origin rates" }
+    ]
+  ]
+}

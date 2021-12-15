@@ -1,0 +1,16 @@
+export enum compareTypesEnum {
+  NotEqual = "no-eq",
+  Equal = "eq",
+  GreaterOrEqual = "greaterOrEqualThan",
+  LowerOrEqual = "lowerOrEqualThan",
+  Greater = "greaterThan",
+  Lower = "lowerThen",
+  GreaterThanValue = "greaterThanValue",
+  LowerThanValue = "lowerThanValue",
+  Truthy = "truthy",
+  Falsy = "falsy",
+  True = "true",
+  False = "false",
+  CompareValue = "compareValue",
+  NotEqualValue = "noEqualValue",
+}

@@ -1,0 +1,32 @@
+{
+  "columnsInfo": [
+    { "field": "product", "title": "PRD", "show": true, "width": 100 },
+    { "field": "country", "title": "Country", "show": true },
+    { "field": "sellDestination", "title": "Sell Destination", "show": true, "width": 300 },
+    { "field": "originGroup", "title": "Origin Group", "show": true },
+    { "field": "origin", "title": "Origin", "show": true },
+    { "field": "floorOrigin", "title": "Floor Origin", "show": true },
+    { "field": "currency", "title": "FX", "show": true, "width": 100 },
+    { "field": "costUpdate", "title": "A/M", "show": true, "format": "{0:0.######}", "exportFormat": "0.000000", "width": 125, "filter": "numeric" },
+    { "field": "floorCost", "title": "Floor Cost", "show": true, "format": "{0:0.######}", "exportFormat": "0.000000", "filter": "numeric" },
+    { "field": "effMarkup", "title": "Effective Markup", "show": true },
+    { "field": "markup", "title": "Markup", "show": true, "format": "{0:0.######}", "exportFormat": "0.000000", "filter": "numeric" },
+    { "field": "markupPer", "title": "Markup Per", "show": true, "filter": "numeric" },
+    { "field": "floorRate", "title": "Floor Rate", "show": true, "format": "{0:0.####}", "exportFormat": "0.0000", "filter": "numeric" },
+    { "field": "currentCost", "title": "Current Cost", "show": true, "format": "{0:0.######}", "exportFormat": "0.000000", "filter": "numeric" },
+    { "field": "ftr", "title": "FTR/MTR", "show": true, "format": "{0:0.######}", "exportFormat": "0.000000", "filter": "numeric" },
+    { "field": "futureCost", "title": "Future Cost", "show": true, "format": "{0:0.######}", "exportFormat": "0.000000", "filter": "numeric" },
+    { "field": "pufAllowInd", "title": "Allow Puf", "show": true, "width": 100 },
+    { "field": "comments", "title": "Comments", "show": true },
+    { "field": "exceptionReason", "title": "Exception Reason", "show": true, "width": 125 },
+    { "field": "marketShift", "title": "Exception", "show": true, "width": 100 },
+    { "field": "beginDate", "title": "Start Date", "show": true, "format": "{0:dd/MMM/yyyy}", "filter": "date" },
+    { "field": "endDate", "title": "End Date", "show": true, "format": "{0:dd/MMM/yyyy HH:mm:ss}", "filter": "date" },
+    { "field": "prefRouteCategoryId", "title": "Category", "show": true, "width": 75, "filter": "numeric" },
+    { "field": "analyst", "title": "Analyst", "show": true },
+    { "field": "changedBy", "title": "Change Operator", "show": true, "width": 150 },
+    { "field": "changeDate", "title": "Change Date", "show": true, "format": "{0:dd/MMM/yyyy}", "filter": "date" },
+    { "field": "createdBy", "title": "Operator", "show": true, "width": 150 },
+    { "field": "createDate", "title": "Create Date", "show": true, "format": "{0:dd/MMM/yyyy}", "filter": "date" }
+  ]
+}

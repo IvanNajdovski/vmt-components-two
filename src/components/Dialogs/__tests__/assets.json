@@ -1,0 +1,235 @@
+{
+  "mainActions": {
+    "customerRmsFinalize": {
+      "iconClass": "fa fas fa-check-circle",
+      "className": "btn-success",
+      "type": "button",
+      "label": "Finalize Rates",
+      "disabledType": ""
+    }
+  },
+  "secondaryActions": {
+    "copyFloor": {
+      "btnType": "",
+      "iconClass": "fa fa-sm fas fa-copy",
+      "type": "button",
+      "actionType": "modal",
+      "disabledType": "data",
+      "modalOptions": {
+        "title": "Copy Floor to New Rate",
+        "submitBtn": "Copy"
+      },
+      "modalContent": {
+        "componentType": "copyFloorModal"
+      },
+      "label": "Copy Floor",
+      "className": "mr-2 btn-outline-neutral"
+    },
+    "copyCurrent": {
+      "btnType": "",
+      "iconClass": "fa fa-sm fas fa-copy",
+      "type": "button",
+      "actionType": "modal",
+      "disabledType": "data",
+      "modalOptions": {
+        "title": "Copy Current to New Rate",
+        "submitBtn": "Copy"
+      },
+      "modalContent": {
+        "componentType": "copyCurrentModal"
+      },
+      "label": "Copy Current",
+      "className": "mr-2 btn-outline-neutral"
+    },
+    "clearChanges": {
+      "btnType": "",
+      "iconClass": "fa fas fa-times",
+      "type": "button",
+      "label": "Clear New Rates",
+      "className": "mr-2 btn-outline-neutral",
+      "disabledType": ""
+    },
+    "groupRates": {
+      "btnType": "",
+      "iconClass": "fa fas fa-layer-group",
+      "type": "button",
+      "label": "Group Rates",
+      "className": "mr-2 btn-outline-neutral",
+      "disabledType": "selected",
+      "actionType": "modal",
+      "modalOptions": {
+        "title": "Update the following records",
+        "width": 1200
+      },
+      "modalContent": {
+        "clearChanges": {
+          "btnType": "",
+          "iconClass": "fa fas fa-times",
+          "type": "button",
+          "label": "Clear New Rates",
+          "className": "mr-2 btn-outline-neutral",
+          "disabledType": ""
+        },
+        "componentType": "bulkUpdate",
+        "columnsInfo": [
+          { "field": "country", "title": "Country", "show": true },
+          { "field": "currencyCode", "title": "Currency", "show": true },
+          { "field": "sellDestination", "title": "Destination", "show": true },
+          { "field": "originGroup", "title": "Customer Origin", "show": true },
+          { "field": "timeOfDay", "title": "Time Of Day", "show": true },
+          { "field": "product", "title": "Product", "show": true },
+          { "field": "floorRate", "title": "Floor Rate", "show": true },
+          { "field": "pufTypeDesc", "title": "PUF Type", "show": true },
+          { "field": "manualFlag", "title": "Neg. Rate Flag", "show": true },
+          { "field": "currentRate", "title": "Current Rate", "show": true },
+          { "field": "newRate", "title": "New Rate", "show": true },
+          { "field": "changeFlag", "title": "Changes", "show": true },
+          { "field": "warningInfo", "title": "Warning / Info", "show": true },
+          { "field": "pendingRate", "title": "Pending Rate", "show": true },
+          { "field": "pendingStartDate", "title": "Pending Date", "show": true, "format": "{0:dd/MMM/yyyy}" },
+          { "field": "volume", "title": "Volume", "show": true },
+          { "field": "ampm", "title": "AMPM", "show": true },
+          { "field": "acpm", "title": "ACPM", "show": true },
+          { "field": "terminate", "title": "Terminated", "show": true }
+        ],
+        "customCells": {
+          "currentRate": {
+            "type": "notification",
+            "bgOverride": [{ "operations": [{ "operator": "truthy", "field": "pufTypeDesc" }], "resultValue": "bg-secondary-light" }]
+          },
+          "sellDestination": {
+            "type": "notification",
+            "bgOverride": [{ "operations": [{ "operator": "truthy", "field": "pufTypeDesc" }], "resultValue": "bg-secondary-light" }]
+          },
+          "changeFlag": {
+            "type": "notification",
+            "bgOverride": [
+              {
+                "operations": [{ "operator": "eq", "field": "newRate", "fieldToCompare": "currentRate" }],
+                "resultValue": "bg-danger-light text-center",
+                "displayValue": "U"
+              },
+              {
+                "operations": [{ "operator": "greaterThen", "field": "newRate", "fieldToCompare": "currentRate" }],
+                "resultValue": "bg-danger-light text-center"
+              },
+              {
+                "operations": [{ "operator": "lowerThen", "field": "newRate", "fieldToCompare": "currentRate" }],
+                "resultValue": "bg-danger-light text-center"
+              },
+              {
+                "operations": [{ "operator": "falsy", "field": "newRate" }],
+                "resultValue": ""
+              },
+              {
+                "operations": [{ "operator": "compareValue", "field": "terminate", "value": "Y" }],
+                "resultValue": "bg-danger-light text-center"
+              }
+            ],
+            "valueOverride": [
+              {
+                "operations": [{ "operator": "eq", "field": "newRate", "fieldToCompare": "currentRate" }],
+                "displayValue": "U"
+              },
+              {
+                "operations": [{ "operator": "greaterThen", "field": "newRate", "fieldToCompare": "currentRate" }],
+                "displayValue": "I"
+              },
+              {
+                "operations": [{ "operator": "lowerThen", "field": "newRate", "fieldToCompare": "currentRate" }],
+                "displayValue": "D"
+              },
+
+              {
+                "operations": [{ "operator": "compareValue", "field": "terminate", "value": "Y" }],
+                "displayValue": "T"
+              }
+            ]
+          },
+          "warningInfo": {
+            "type": "notification",
+            "valueOverride": [
+              {
+                "operations": [{ "operator": "greaterThen", "field": "acpm", "fieldToCompare": "newRate" }],
+                "displayValue": "Rate lower than ACPM - not allowed - requires MM approval"
+              },
+              {
+                "operations": [{ "operator": "greaterThen", "field": "floorRate", "fieldToCompare": "newRate" }],
+                "displayValue": "Rate below Floor cost - not allowed - requires MM approval"
+              },
+              {
+                "operations": [
+                  { "operator": "greaterThen", "field": "acpm", "fieldToCompare": "newRate" },
+                  { "operator": "greaterThen", "field": "floorRate", "fieldToCompare": "newRate" }
+                ],
+                "displayValue": "Rate below Floor cost, and lower than ACPM -  not allowed - requires MM approval"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "uploadRates": {
+      "btnType": "",
+      "iconClass": "fas fa-upload",
+      "type": "button",
+      "actionType": "modal",
+      "disabledType": "data",
+      "modalOptions": {
+        "title": "Upload Rates",
+        "submitBtn": "upload"
+      },
+      "modalContent": {
+        "componentType": "uploadModal"
+      },
+      "label": "Upload",
+      "className": "mr-2 btn-outline-neutral"
+    }
+  },
+  "exportData": [
+    { "id": 1, "name": "Export Grid" },
+    { "id": 2, "name": "Export Grid include hidden", "exportHidden": true },
+    {
+      "id": 3,
+      "name": "Export for import",
+      "columns": [
+        { "title": "COUNTRY_ID", "field": "countryId", "show": true },
+        { "title": "CUSTOMER_ID", "field": "customerId", "show": true },
+        { "title": "CUSTOMER_NAME", "field": "customerName", "show": true },
+        { "title": "PREFERRED_ROUTE_ID", "field": "sellDestinationId", "show": true },
+        { "title": "PL_ROUTE_DESC", "field": "sellDestination", "show": true },
+        { "title": "PERIOD_CODE", "field": "timeOfDay", "show": true },
+        { "title": "RATE", "field": "currentRate", "show": true },
+        { "title": "NEW_RATE", "field": "newRate", "show": true },
+        { "title": "MMTR_CUST_GROUP_ID", "field": "customerOriginGroupId", "show": true },
+        { "title": "MMTR_ORIG_DESC", "field": "originName", "show": true }
+      ]
+    }
+  ],
+  "conflictModalColumns": {
+    "conflicts": {
+      "columnsInfo": [
+        { "field": "sellDestination", "title": "Sell Destination", "show": true },
+        { "field": "country", "title": "Country", "show": true },
+        { "field": "timeOfDay", "title": "POW", "show": true },
+        { "field": "terminate", "title": "Terminate", "show": true },
+        { "field": "currentRate", "title": "Current Rate", "show": true },
+        { "field": "newRate", "title": "New Rate", "show": true },
+        { "field": "override", "title": "Override Pending with New", "show": true }
+      ],
+      "customCells": {
+        "override": {
+          "type": "checkBox"
+        }
+      }
+    },
+    "originals": {
+      "columnsInfo": [
+        { "field": "modSheetId", "title": "Mod Sheet Id", "show": true },
+        { "field": "rate", "title": "Rate", "show": true },
+        { "field": "startDate", "title": "Start Date", "show": true, "format": "{0:dd/MMM/yyyy}" },
+        { "field": "endDate", "title": "End Date", "show": true, "format": "{0:dd/MMM/yyyy HH:mm:ss}" }
+      ]
+    }
+  }
+}

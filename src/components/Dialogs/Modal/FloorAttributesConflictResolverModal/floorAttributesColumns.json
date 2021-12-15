@@ -1,0 +1,28 @@
+{
+  "columnsInfo": [
+    { "field": "countryName", "title": "Country", "show": true },
+    { "field": "plRouteDesc", "title": "Sell Destination", "show": true, "width": 300 },
+    { "field": "shortName", "title": "PRD", "show": true, "width": 100 },
+    { "field": "isoCurrencyCode", "title": "FX", "show": true, "width": 175 },
+    { "field": "originGroup", "title": "Origin Group", "show": true },
+    { "field": "origin", "title": "Origin", "show": true },
+    { "field": "floorCalcFrq", "title": "Floor FRQ", "show": true, "width": 175 },
+    { "field": "autoInd", "title": "Auto Ind", "show": true, "width": 175 },
+    { "field": "pufAllowInd", "title": "Allow Puf", "show": true, "width": 175 },
+    { "field": "analystUser", "title": "Analyst", "show": true, "width": 150 },
+    { "field": "defaultMarkupType", "title": "Default Markup Type", "show": true, "width": 175 },
+    { "field": "defaultMarkupUnit", "title": "Default Markup", "format": "{0:0.####}", "show": true, "filter": "numeric" },
+    { "field": "minMarkupCost", "title": "Min ACPM Threshold", "format": "{0:0.####}", "show": true, "filter": "numeric" },
+    { "field": "minMarkupUnit", "title": "Min Markup", "format": "{0:0.####}", "show": true, "filter": "numeric" },
+    { "field": "minMarkupType", "title": "Min Markup Type", "show": true, "width": 175 },
+    { "field": "maxMarkupUnit", "title": "Max Markup", "format": "{0:0.####}", "show": true, "filter": "numeric" },
+    { "field": "maxMarkupCost", "title": "Max ACPM Threshold", "format": "{0:0.####}", "show": true, "filter": "numeric" },
+    { "field": "maxMarkupType", "title": "Max Markup Type", "show": true, "width": 175 },
+    { "field": "startDate", "title": "Start Date", "show": true, "format": "{0:dd/MMM/yyyy}", "filter": "date" },
+    { "field": "endDate", "title": "End Date", "show": true },
+    { "field": "createDate", "title": "Create Date", "show": true, "format": "{0:dd/MMM/yyyy}", "filter": "date" },
+    { "field": "createdBy", "title": "Created By", "show": true, "width": 150 },
+    { "field": "changeDate", "title": "Change Date", "show": true, "format": "{0:dd/MMM/yyyy}", "filter": "date" },
+    { "field": "changedBy", "title": "Changed By", "show": true, "width": 150 }
+  ]
+}

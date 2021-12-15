@@ -1,0 +1,106 @@
+{
+  "mainActions": {
+    "customerRmsFinalize": {
+      "data-testid": "finalize",
+      "iconClass": "fa fas fa-check-circle",
+      "className": "btn-success",
+      "type": "button",
+      "label": "Finalize Rates",
+      "disabledType": "finalize"
+    }
+  },
+  "secondaryActions": {
+    "clearChanges": {
+      "btnType": "",
+      "iconClass": "fa fas fa-times",
+      "type": "button",
+      "label": "Clear New Rates",
+      "className": "mr-2 btn-outline-neutral",
+      "disabledType": "finalize"
+    },
+    "copyTo": {
+      "data-testid": "secondary",
+      "btnType": "",
+      "iconClass": "fa fa-sm fas fa-copy",
+      "type": "button",
+      "actionType": "modal",
+      "disabledType": "data",
+      "modalOptions": {
+        "title": "Copy Rates",
+        "submitBtn": "Copy"
+      },
+      "modalContent": {
+        "componentType": "copyModal"
+      },
+      "label": "Copy",
+      "className": "mr-2 btn-outline-neutral"
+    }
+  },
+  "exportData": [
+    {
+      "id": 1,
+      "name": "Export Grid"
+    },
+    {
+      "id": 2,
+      "name": "Export Grid include hidden",
+      "exportHidden": true
+    },
+    {
+      "id": 3,
+      "name": "Export for import",
+      "columns": [
+        {
+          "title": "COUNTRY_ID",
+          "field": "countryId",
+          "show": true
+        },
+        {
+          "title": "CUSTOMER_ID",
+          "field": "customerId",
+          "show": true
+        },
+        {
+          "title": "CUSTOMER_NAME",
+          "field": "customerName",
+          "show": true
+        },
+        {
+          "title": "PREFERRED_ROUTE_ID",
+          "field": "sellDestinationId",
+          "show": true
+        },
+        {
+          "title": "PL_ROUTE_DESC",
+          "field": "sellDestination",
+          "show": true
+        },
+        {
+          "title": "PERIOD_CODE",
+          "field": "timeOfDay",
+          "show": true
+        },
+        {
+          "title": "CURRENT_RATE",
+          "field": "currentRate",
+          "show": true
+        },
+        {
+          "title": "NEW_RATE",
+          "field": "newRate",
+          "show": true
+        },
+        {
+          "title": "MMTR_CUST_GROUP_ID",
+          "field": "customerOriginGroupId",
+          "show": true
+        },
+        {
+          "title": "MMTR_ORIG_DESC",
+          "field": "customerOrigin",
+          "show": true
+        }
+      ]
+    }
+  ]
+}

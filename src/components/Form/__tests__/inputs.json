@@ -1,0 +1,49 @@
+[
+  {
+    "rowStyle": "align-items-end",
+    "inputGroup": [
+      {
+        "group": false,
+        "inputs": [
+          {
+            "wrapperClassName": "col-lg-20",
+            "label": "Customer",
+            "name": "customer",
+            "textField": "customerName",
+            "dataItemKey": "customerId",
+            "inputComponent": "virtualDropdown",
+            "pageSize": 50,
+            "keyFieldValue": ["customerName", "customerId"],
+            "required": true
+          },
+          {
+            "wrapperClassName": "col-lg-4",
+            "label": "Colo Code",
+            "name": "coloCode",
+            "textField": "coloCode",
+            "dataItemKey": "coloCode",
+            "dataField": "coloCodes",
+            "inputComponent": "customerColo"
+          }
+        ],
+        "actions": {
+          "wrapperClassName": "col-lg-4",
+          "actions": [
+            {
+              "title": "Undo",
+              "btnClass": "btn-outline-neutral",
+              "icon": "fa-filter",
+              "type": "reset"
+            },
+            {
+              "title": "Search",
+              "btnClass": "btn-primary",
+              "icon": "fa-search",
+              "type": "submit"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

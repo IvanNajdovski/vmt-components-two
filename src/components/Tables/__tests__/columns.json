@@ -1,0 +1,71 @@
+{
+  "columnsInfo": [
+    { "field": "country", "title": "Country", "show": true },
+    { "field": "currencyCode", "title": "Currency", "show": true },
+    { "field": "sellDestination", "title": "Destination", "show": true },
+    { "field": "originGroup", "title": "Customer Origin", "show": true },
+    { "field": "timeOfDay", "title": "Time Of Day", "show": true },
+    { "field": "product", "title": "Product", "show": true },
+    { "field": "pufTypeDesc", "title": "PUF Type", "show": true },
+    { "field": "manualFlag", "title": "Neg. Rate Flag", "show": true },
+    { "field": "floorRate", "title": "Floor Rate", "show": true },
+    { "field": "currentRate", "title": "Current Rate", "show": true },
+    { "field": "newRate", "title": "New Rate", "show": true },
+    { "field": "changeFlag", "title": "Changes", "show": true },
+    { "field": "warningInfo", "title": "Warning / Info", "show": true },
+    { "field": "pendingRate", "title": "Pending Rate", "show": true },
+    { "field": "pendingStartDate", "title": "Pending Date", "show": false, "format": "{0:dd/MMM/yyyy}" },
+    { "field": "volume", "title": "Volume", "show": true },
+    { "field": "ampm", "title": "AMPM", "show": true },
+    { "field": "acpm", "title": "ACPM", "show": true },
+    { "field": "terminate", "title": "Terminated", "show": true }
+  ],
+  "customCells": {
+    "newRate": {
+      "shouldNotRender": {
+        "componentType": null,
+        "compareOptions": [[{ "operator": "compareValue", "field": "terminate", "value": "Y" }]]
+      },
+      "type": "numeric",
+      "step": 0.0001,
+      "format": "0.####"
+    },
+    "terminate": {
+      "type": "checkBoxValue",
+      "values": { "true": "Y", "false": "N" }
+    },
+    "changeFlag": {
+      "type": "notification",
+      "bgOverride": [
+        {
+          "operations": [{ "operator": "eq", "field": "newRate", "fieldToCompare": "currentRate" }],
+          "resultValue": "bg-danger-light text-center"
+        },
+        {
+          "operations": [{ "operator": "greaterThen", "field": "newRate", "fieldToCompare": "currentRate" }],
+          "resultValue": "bg-danger-light text-center"
+        },
+        {
+          "operations": [{ "operator": "lowerThen", "field": "newRate", "fieldToCompare": "currentRate" }],
+          "resultValue": "bg-danger-light text-center"
+        },
+        {
+          "operations": [{ "operator": "falsy", "field": "newRate" }],
+          "resultValue": ""
+        },
+        {
+          "operations": [{ "operator": "compareValue", "field": "terminate", "value": "Y" }],
+          "resultValue": "bg-danger-light text-center"
+        }
+      ]
+    },
+    "currentRate": {
+      "type": "notification",
+      "bgOverride": [{ "operations": [{ "operator": "truthy", "field": "pufTypeDesc" }], "resultValue": "bg-secondary-light" }]
+    },
+    "sellDestination": {
+      "type": "notification",
+      "bgOverride": [{ "operations": [{ "operator": "truthy", "field": "pufTypeDesc" }], "resultValue": "bg-secondary-light" }]
+    }
+  }
+}
